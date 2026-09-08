@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DictResizeProof.Benchmarks.CollisionBench-20260908-223641</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 10 (10.0.20348.5386)
+Intel Xeon Silver 4314 CPU 2.40GHz, 2 CPU, 64 logical and 32 physical cores
+.NET SDK 11.0.100-preview.5.26302.115
+  [Host] : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net10  : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net8   : .NET 8.0.16 (8.0.16, 8.0.1625.21506), X64 RyuJIT x86-64-v4
+  net9   : .NET 9.0.5 (9.0.5, 9.0.525.21509), X64 RyuJIT x86-64-v4
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Job</th><th>Toolchain</th><th>Keys</th><th>Chain</th><th>Mean </th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Code Size</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Lookup</td><td>net10</td><td>net10</td><td>same</td><td>50</td><td>3,225.3 ns</td><td>42.16 ns</td><td>39.44 ns</td><td>1.00</td><td>0.02</td><td>856 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net8</td><td>net8</td><td>same</td><td>50</td><td>3,437.3 ns</td><td>26.77 ns</td><td>25.04 ns</td><td>1.07</td><td>0.01</td><td>398 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net9</td><td>net9</td><td>same</td><td>50</td><td>3,491.1 ns</td><td>41.80 ns</td><td>39.10 ns</td><td>1.08</td><td>0.02</td><td>397 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net10</td><td>net10</td><td>same</td><td>101</td><td>14,917.5 ns</td><td>176.83 ns</td><td>147.66 ns</td><td>1.00</td><td>0.01</td><td>855 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net8</td><td>net8</td><td>same</td><td>101</td><td>15,665.6 ns</td><td>234.78 ns</td><td>219.61 ns</td><td>1.05</td><td>0.02</td><td>398 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net9</td><td>net9</td><td>same</td><td>101</td><td>15,792.6 ns</td><td>235.51 ns</td><td>220.30 ns</td><td>1.06</td><td>0.02</td><td>397 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net10</td><td>net10</td><td>same</td><td>102</td><td>1,180.5 ns</td><td>16.37 ns</td><td>18.20 ns</td><td>1.00</td><td>0.02</td><td>1,268 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net8</td><td>net8</td><td>same</td><td>102</td><td>1,894.6 ns</td><td>33.33 ns</td><td>31.17 ns</td><td>1.61</td><td>0.03</td><td>398 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net9</td><td>net9</td><td>same</td><td>102</td><td>1,728.1 ns</td><td>18.44 ns</td><td>17.25 ns</td><td>1.46</td><td>0.03</td><td>404 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net10</td><td>net10</td><td>same</td><td>200</td><td>2,306.4 ns</td><td>25.92 ns</td><td>24.25 ns</td><td>1.00</td><td>0.01</td><td>1,272 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net8</td><td>net8</td><td>same</td><td>200</td><td>3,439.0 ns</td><td>56.60 ns</td><td>50.18 ns</td><td>1.49</td><td>0.03</td><td>396 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net9</td><td>net9</td><td>same</td><td>200</td><td>3,428.9 ns</td><td>55.93 ns</td><td>49.58 ns</td><td>1.49</td><td>0.03</td><td>404 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net10</td><td>net10</td><td>spread</td><td>50</td><td>303.1 ns</td><td>2.12 ns</td><td>1.65 ns</td><td>1.00</td><td>0.01</td><td>1,044 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net8</td><td>net8</td><td>spread</td><td>50</td><td>588.1 ns</td><td>9.14 ns</td><td>8.10 ns</td><td>1.94</td><td>0.03</td><td>398 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net9</td><td>net9</td><td>spread</td><td>50</td><td>582.9 ns</td><td>7.99 ns</td><td>7.47 ns</td><td>1.92</td><td>0.03</td><td>404 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net10</td><td>net10</td><td>spread</td><td>101</td><td>616.1 ns</td><td>8.68 ns</td><td>8.12 ns</td><td>1.00</td><td>0.02</td><td>1,044 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net8</td><td>net8</td><td>spread</td><td>101</td><td>1,210.9 ns</td><td>20.03 ns</td><td>18.73 ns</td><td>1.97</td><td>0.04</td><td>398 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net9</td><td>net9</td><td>spread</td><td>101</td><td>1,217.9 ns</td><td>13.44 ns</td><td>11.92 ns</td><td>1.98</td><td>0.03</td><td>404 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net10</td><td>net10</td><td>spread</td><td>102</td><td>623.1 ns</td><td>7.61 ns</td><td>7.12 ns</td><td>1.00</td><td>0.02</td><td>1,044 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net8</td><td>net8</td><td>spread</td><td>102</td><td>1,234.8 ns</td><td>15.13 ns</td><td>12.63 ns</td><td>1.98</td><td>0.03</td><td>398 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net9</td><td>net9</td><td>spread</td><td>102</td><td>1,238.7 ns</td><td>22.93 ns</td><td>20.32 ns</td><td>1.99</td><td>0.04</td><td>404 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net10</td><td>net10</td><td>spread</td><td>200</td><td>1,428.0 ns</td><td>12.64 ns</td><td>11.82 ns</td><td>1.00</td><td>0.01</td><td>1,077 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net8</td><td>net8</td><td>spread</td><td>200</td><td>2,599.4 ns</td><td>41.83 ns</td><td>39.13 ns</td><td>1.82</td><td>0.03</td><td>397 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Lookup</td><td>net9</td><td>net9</td><td>spread</td><td>200</td><td>2,561.2 ns</td><td>50.97 ns</td><td>54.54 ns</td><td>1.79</td><td>0.04</td><td>404 B</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

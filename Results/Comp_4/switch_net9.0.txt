@@ -1,0 +1,25 @@
+Рантайм: 9.0.5
+
+Бакетов в словаре с заказанной вместимостью 1024: 1103
+
+компаратор не задан
+  до вставок           NonRandomizedStringEqualityComparer.OrdinalComparer
+  после 101 вставок    NonRandomizedStringEqualityComparer.OrdinalComparer
+  после 102 вставок    RandomizedStringEqualityComparer.OrdinalComparer
+  подмена на вставке   102
+  занятых бакетов      185 из 1103
+
+StringComparer.Ordinal
+  до вставок           NonRandomizedStringEqualityComparer.OrdinalComparer
+  после 101 вставок    NonRandomizedStringEqualityComparer.OrdinalComparer
+  после 102 вставок    RandomizedStringEqualityComparer.OrdinalComparer
+  подмена на вставке   102
+  занятых бакетов      184 из 1103
+
+свой компаратор
+  до вставок           Switch.OwnComparer
+  после 101 вставок    Switch.OwnComparer
+  после 102 вставок    Switch.OwnComparer
+  подмена на вставке   не произошла
+  занятых бакетов      1 из 1103
+

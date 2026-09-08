@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DictResizeProof.Benchmarks.FastModBench-20260908-225053</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i9-10900KF CPU 3.70GHz, 1 CPU, 20 logical and 10 physical cores
+.NET SDK 11.0.100-preview.5.26302.115
+  [Host] : .NET 10.0.11 (10.0.11, 10.0.1126.37416), X64 RyuJIT x86-64-v3
+  net10  : .NET 10.0.11 (10.0.11, 10.0.1126.37416), X64 RyuJIT x86-64-v3
+  net8   : .NET 8.0.30 (8.0.30, 8.0.3026.36720), X64 RyuJIT x86-64-v3
+  net9   : .NET 9.0.19 (9.0.19, 9.0.1926.36724), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Job</th><th>Toolchain</th><th>Size</th><th>Mean  </th><th>Error</th><th>StdDev</th><th>Ratio</th><th>Code Size</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Remainder</td><td>net10</td><td>net10</td><td>10000</td><td>15.868 &mu;s</td><td>0.0391 &mu;s</td><td>0.0305 &mu;s</td><td>1.00</td><td>71 B</td><td>-</td><td>NA</td>
+</tr><tr><td>FastMod</td><td>net10</td><td>net10</td><td>10000</td><td>5.144 &mu;s</td><td>0.0278 &mu;s</td><td>0.0260 &mu;s</td><td>0.32</td><td>73 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Remainder</td><td>net8</td><td>net8</td><td>10000</td><td>15.851 &mu;s</td><td>0.0500 &mu;s</td><td>0.0443 &mu;s</td><td>1.00</td><td>75 B</td><td>-</td><td>NA</td>
+</tr><tr><td>FastMod</td><td>net8</td><td>net8</td><td>10000</td><td>5.312 &mu;s</td><td>0.0120 &mu;s</td><td>0.0113 &mu;s</td><td>0.33</td><td>76 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Remainder</td><td>net9</td><td>net9</td><td>10000</td><td>15.892 &mu;s</td><td>0.0730 &mu;s</td><td>0.0683 &mu;s</td><td>1.00</td><td>71 B</td><td>-</td><td>NA</td>
+</tr><tr><td>FastMod</td><td>net9</td><td>net9</td><td>10000</td><td>5.128 &mu;s</td><td>0.0161 &mu;s</td><td>0.0143 &mu;s</td><td>0.32</td><td>73 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Remainder</td><td>net10</td><td>net10</td><td>100000</td><td>158.328 &mu;s</td><td>0.3627 &mu;s</td><td>0.3215 &mu;s</td><td>1.00</td><td>71 B</td><td>-</td><td>NA</td>
+</tr><tr><td>FastMod</td><td>net10</td><td>net10</td><td>100000</td><td>52.077 &mu;s</td><td>0.0761 &mu;s</td><td>0.0674 &mu;s</td><td>0.33</td><td>73 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Remainder</td><td>net8</td><td>net8</td><td>100000</td><td>158.622 &mu;s</td><td>0.4319 &mu;s</td><td>0.3607 &mu;s</td><td>1.00</td><td>75 B</td><td>-</td><td>NA</td>
+</tr><tr><td>FastMod</td><td>net8</td><td>net8</td><td>100000</td><td>53.968 &mu;s</td><td>0.1783 &mu;s</td><td>0.1580 &mu;s</td><td>0.34</td><td>76 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Remainder</td><td>net9</td><td>net9</td><td>100000</td><td>158.309 &mu;s</td><td>0.2998 &mu;s</td><td>0.2658 &mu;s</td><td>1.00</td><td>71 B</td><td>-</td><td>NA</td>
+</tr><tr><td>FastMod</td><td>net9</td><td>net9</td><td>100000</td><td>52.044 &mu;s</td><td>0.1328 &mu;s</td><td>0.1178 &mu;s</td><td>0.33</td><td>73 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Remainder</td><td>net10</td><td>net10</td><td>1000000</td><td>1,582.374 &mu;s</td><td>2.0093 &mu;s</td><td>1.5687 &mu;s</td><td>1.00</td><td>71 B</td><td>-</td><td>NA</td>
+</tr><tr><td>FastMod</td><td>net10</td><td>net10</td><td>1000000</td><td>525.076 &mu;s</td><td>2.4265 &mu;s</td><td>2.1511 &mu;s</td><td>0.33</td><td>73 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Remainder</td><td>net8</td><td>net8</td><td>1000000</td><td>1,584.606 &mu;s</td><td>3.8348 &mu;s</td><td>3.3994 &mu;s</td><td>1.00</td><td>75 B</td><td>-</td><td>NA</td>
+</tr><tr><td>FastMod</td><td>net8</td><td>net8</td><td>1000000</td><td>542.718 &mu;s</td><td>2.9471 &mu;s</td><td>2.6126 &mu;s</td><td>0.34</td><td>76 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Remainder</td><td>net9</td><td>net9</td><td>1000000</td><td>1,583.987 &mu;s</td><td>3.6451 &mu;s</td><td>2.8459 &mu;s</td><td>1.00</td><td>71 B</td><td>-</td><td>NA</td>
+</tr><tr><td>FastMod</td><td>net9</td><td>net9</td><td>1000000</td><td>527.306 &mu;s</td><td>3.7673 &mu;s</td><td>3.5240 &mu;s</td><td>0.33</td><td>73 B</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>
